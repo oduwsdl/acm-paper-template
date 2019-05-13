@@ -8,3 +8,5 @@ $ cd YOUR_PAPER_NAME
 $ rm -rf .git
 $ make
 ```
+
+Read comments in the `main.tex` file to hide copyright notice and reference blocks or to hide/update [CCS Concepts](https://dl.acm.org/ccs/ccs.cfm) in the front matter.
