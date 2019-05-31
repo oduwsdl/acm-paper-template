@@ -9,4 +9,8 @@ $ rm -rf .git
 $ make
 ```
 
-Read comments in the `main.tex` file to hide copyright notice and reference blocks or to hide/update [CCS Concepts](https://dl.acm.org/ccs/ccs.cfm) in the front matter.
+Use additional `techreport` class parameter to hide unnecessary conference metadata:
+
+```
+\documentclass[sigconf,techreport]{acmart}
+```

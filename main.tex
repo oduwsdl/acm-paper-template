@@ -1,4 +1,7 @@
 \documentclass[sigconf]{acmart}
+% Alternatively, use "techreport" class parameter as shown below
+% to hide conference specific metadata from the paper.
+% \documentclass[sigconf,techreport]{acmart}
 
 \newcommand{\todo}[1][To be updated later!]{{\color{red} TODO: {#1}}}
 
@@ -10,11 +13,23 @@
 \copyrightyear{0000}
 \acmPrice{0.00}
 
-% To hide the reference block and copyright note from teh front page
-% comment the above metadata block out and uncomment the following two lines
-%
-% \settopmatter{printacmref=false}
-% \renewcommand\footnotetextcopyrightpermission[1]{}
+% When "techreport" class parameter is supplied:
+%   * hide reference block from the front page
+%   * hide copyright note from the front page
+%   * change conference info in the header of alternate pages to title
+%   * add page number in the center of the footer of non-title pages
+\makeatletter
+\@ifclasswith{acmart}{techreport}{
+  \settopmatter{printacmref=false}
+  \renewcommand\footnotetextcopyrightpermission[1]{}
+  \fancyhead{}
+  \fancyfoot{}
+  \fancyhead[L]{\shorttitle}
+  \fancyhead[R]{\shortauthors}
+  \fancyfoot[C]{\thepage}
+  % \AtBeginDocument{The pagesize is \texttt{a5paper}.\par}
+}{}
+\makeatother
 
 
 \begin{document}
